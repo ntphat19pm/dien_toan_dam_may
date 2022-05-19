@@ -77,9 +77,9 @@
 				querySnapshot.forEach((doc) => {
 					var marker_icon = '';
 						if(doc.data().Loai == 1)
-								marker_icon = '../images/hotel.png';
+								marker_icon = '../images/mart.png';
 							else if(doc.data().Loai == 2)
-								marker_icon = '../images/motel3.png';
+								marker_icon = '../images/shopping.png';
 							
 						loc = new Microsoft.Maps.Location(doc.data().ToaDo.latitude, doc.data().ToaDo.longitude);
 						pin = new Microsoft.Maps.Pushpin(loc, {

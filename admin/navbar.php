@@ -26,8 +26,8 @@
 				<a href="index.php" class="nav-item nav-link "><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
 				<a href="bando.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Bản đồ</a>
 				<a href="diadiem.php" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Địa điểm</a>
-				<a href="loaidiadiem.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Loại địa điểm</a>
-				<a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
+				<a href="thoitiet.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Thời tiết</a>
+				<a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Thêm user</a>
 				<a href="dangxuat.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Đăng xuất</a>
 			</div>
 		<?php

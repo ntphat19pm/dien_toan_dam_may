@@ -101,26 +101,6 @@
     </div>
 
 		<?php include "javascript.php"; ?>
-
-		<script>
-			db.collection('hotel').get().then((querySnapshot) => {
-				var stt = 1;
-				var output = '';
-				querySnapshot.forEach((doc) => {
-					output += '<tr>';
-						output += '<td>'+stt+'</td>';
-						output += '<td>'+doc.data().TenDiaDiem+'</td>';
-						output += '<td>'+doc.data().DiaChi+'</td>';
-						output += '<td>'+doc.data().ToaDo.latitude+'</td>';
-						output += '<td>'+doc.data().ToaDo.longitude+'</td>';
-						output+=' <td class="text-center"><a href="diadiem_sua.php?id='+doc.id+'"><i class="far fa-edit text-primary" ></i></a></td>';
-						output += '<td align="center"><a href="diadiem_xoa.php?id='+doc.id+'" onclick="return confirm(\'Bạn có muốn xóa địa điểm không?\')"><i class="fas fa-trash-alt text-danger"></i></a></td>';
-					output += '</tr>';
-					stt++;
-				});
-				$('#HienThi').html(output);
-			});
-		</script>
     
 </body>
 

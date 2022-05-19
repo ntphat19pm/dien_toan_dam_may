@@ -71,6 +71,7 @@
 		<?php include "javascript.php"; ?>
 		<script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AuMwXqmzLyhAzBgfWKlKeURmmmDg3KGquxbk2dIhCBSgRv0JMkTYKALBMdtb32Og' async defer></script>
         <script>
+            var map, infobox;
         function GetMap()
                 {
                     var map = new Microsoft.Maps.Map('#map', {
@@ -79,13 +80,19 @@
                         mapTypeId: Microsoft.Maps.MapTypeId.Road,
                         zoom: 15
                     });
+
+                    infobox = new Microsoft.Maps.Infobox(map.getCenter(), {
+                        visible: false
+                    });
+				
+				    infobox.setMap(map);
                     db.collection("hotel").get().then((querySnapshot) => {
                     querySnapshot.forEach((doc) => {
                         var marker_icon = '';
                             if(doc.data().Loai == 1)
-                                    marker_icon = 'images/hotel.png';
+                                    marker_icon = 'images/mart.png';
                                 else if(doc.data().Loai == 2)
-                                    marker_icon = 'images/motel3.png';
+                                    marker_icon = 'images/shopping.png';
                                 
                             loc = new Microsoft.Maps.Location(doc.data().ToaDo.latitude, doc.data().ToaDo.longitude);
                             pin = new Microsoft.Maps.Pushpin(loc, {
@@ -94,10 +101,21 @@
                                 icon : marker_icon,
         
                             });
+                            Microsoft.Maps.Events.addHandler(pin, 'click', pushpinClicked);
                             map.entities.push(pin);
                         });
                     });
                 }
+                function pushpinClicked(e) {
+				if (e.target.metadata) {
+					infobox.setOptions({
+						location: e.target.getLocation(),
+						title: e.target.metadata.title,
+						description: e.target.metadata.description,
+						visible: true
+					});
+				}
+			}
         
         </script>
 

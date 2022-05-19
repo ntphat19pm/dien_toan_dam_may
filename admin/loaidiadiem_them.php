@@ -39,25 +39,35 @@
 
             <!-- Recent Sales Start -->
             <div class="container-fluid pt-4 px-4">
-                <div class="bg-light text-center rounded p-4">
+                <div class="bg-light rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <h6 class="mb-0">Recent Salse</h6>
                         
-						<a href="loaidiadiem_them.php" type="button" class="btn btn-square btn-outline-primary m-2"><i class="fa fa-plus"></i></a>
+						
                     </div>
-                    <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
-                                <tr class="text-dark">
-									<th width="8%">#</th>
-									<th width="40%">Loại địa điểm</th>
-									<th>Biểu tượng MAP</th>
-                                </tr>
-                            </thead>
-                            <tbody id="HienThi">
-                               
-                            </tbody>
-                        </table>
+                    <div class="">
+						<form action="loaidiadiem_them_xuly.php" method="post">
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="form-group">
+										<label for="maloai">Mã loại địa điểm</label>
+										<input type="text" class="form-control" id="maloai" name="maloai" required />
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form-group">
+										<label for="tenloai">Tên loại địa điểm</label>
+										<input type="text" class="form-control" id="tenloai" name="tenloai" required />
+									</div>
+								</div>
+
+                                <div class="form-group invalid">
+                                    <label for="avatar" class="form-label">Ảnh đại diện</label>
+                                    <input type="file" class="form-control" name="avatar" id="avatar" required >
+                                </div>
+							</div>							
+							<button type="submit" class="btn btn-square btn-outline-primary m-2"><i class="fa fa-plus"></i></button>
+						</form>
                     </div>
                 </div>
             </div>
@@ -75,23 +85,6 @@
     </div>
 
 		<?php include "javascript.php"; ?>
-
-		<script>
-			db.collection('loai').get().then((querySnapshot) => {
-				var stt = 1;
-				var output = '';
-				querySnapshot.forEach((doc) => {
-					output += '<tr>';
-						output += '<td>'+stt+'</td>';
-						output += '<td >'+doc.data().tenloai+'</td>';
-						output += '<td class="text-center"><img width="50" src ="images/'+doc.data().BieuTuong+'"></td>';
-						
-					output += '</tr>';
-					stt++;
-				});
-				$('#HienThi').html(output);
-			});
-		</script>
     
 </body>
 
