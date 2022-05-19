@@ -18,9 +18,9 @@
 						<div class ="form-group">
 							<label for="MaLoai">Quyền</label>
 								<select class="custom-select" id="Loai" name="Loai" placeholder="" required>
-											<option value="">-- Chọn --</option>
-											<option value="1">Cửa hàng tiện lợi</option>
-											<option value="2">Siêu thị</option>
+									<option value="">-- Chọn --</option>
+									<option value="1">Cửa hàng tiện lợi</option>
+									<option value="2">Siêu thị</option>
 							</select>
 						</div>
 								

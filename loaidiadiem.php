@@ -7,16 +7,15 @@
 			<?php include "navbar.php"; ?>
 			
 			<div class="card mt-3">
-				<h4 class="card-header">Danh sách loại địa điểm</h4>
+				<h5 class="card-header">Địa điểm</h5>
 				<div class="card-body">
-					<a href="loaidiadiem_them.php" class="btn btn-success mb-2"><i class="fal fa-plus"></i> Thêm loại địa điểm</a>
-					<table class="table table-bordered table-hover table-sm mb-0" align="center">
+					<a href="diadiem_them.php" class="btn btn-success mb-2"><i class="fal fa-plus"></i> Thêm địa điểm</a>
+					<table class="table table-bordered table-hover table-sm mb-0">
 						<thead>
-							<tr align="center">
-								<th width="8%">#</th>
+							<tr>
+								<th width="5%">#</th>
 								<th width="40%">Loại địa điểm</th>
 								<th>Biểu tượng MAP</th>
-								
 							</tr>
 						</thead>
 						<tbody id="HienThi">

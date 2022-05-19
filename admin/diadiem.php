@@ -43,7 +43,7 @@
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <h6 class="mb-0">Recent Salse</h6>
                         
-						<button type="button" class="btn btn-square btn-outline-primary m-2"><i class="fa fa-plus"></i></button>
+						<a href="diadiem_them.php" type="button" class="btn btn-square btn-outline-primary m-2"><i class="fa fa-plus"></i></a>
                     </div>
                     <div class="table-responsive">
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
