@@ -45,6 +45,7 @@
                         
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-3">
                             <a href="diadiem_them.php" class="btn btn-outline-secondary mt-2"><i class="fas fa-plus-circle"></i> Thêm địa điểm</a> 
+                            <!-- <a href="diadiem_nhap.php" class="btn btn-outline-success ml-3 mt-2"><i class="fas fa-file-upload"></i> Nhập Excel</a> -->
                         </div>
 						<!-- <a href="" type="button" class="btn btn-square btn-outline-primary m-2"><i class="fa fa-plus"></i> Thêm địa điểm</a>
 						<a href="diadiem_them.php" type="button" class="btn btn-square btn-outline-primary m-2"><i class="fa fa-file"></i></a> -->
