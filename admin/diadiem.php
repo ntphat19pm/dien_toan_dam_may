@@ -41,7 +41,7 @@
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-light text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Recent Salse</h6>
+                        <h6 class="mb-0">Danh sách địa điểm</h6>
                         
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-3">
                             <a href="diadiem_them.php" class="btn btn-outline-secondary mt-2"><i class="fas fa-plus-circle"></i> Thêm địa điểm</a> 

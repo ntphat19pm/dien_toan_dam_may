@@ -82,7 +82,7 @@
 										<input type="text" class="form-control" id="DiaChi" name="DiaChi" required />
 									</div>
 							</div>							
-							<button type="submit" class="btn btn-square btn-outline-primary m-2"><i class="fa fa-plus"></i></button>
+							<button id="them" type="submit" class="btn btn-square btn-outline-primary m-2"><i class="fa fa-plus"></i></button>
 						</form>
                     </div>
                 </div>
