@@ -28,9 +28,9 @@
                                     <!-- navbar menu -->
                                     <div class="collapse navbar-collapse" id="navbar-footer">
                                         <ul class="nav navbar-nav navbar-center">
-                                            <li><a href="#home">Home</a></li>                    
-                                            <li><a href="#features">Features</a></li>
-                                            <li><a href="#reviews">Reviews</a></li>
+                                            <li><a href="index.php">Trang chủ</a></li>                    
+                                            <li><a href="bando.php">Bản đồ</a></li>
+                                            <li><a href="thoitiet.php">Thời tiết</a></li>
                                             <li><a href="#download">Download</a></li>
                                         </ul>
                                     </div><!-- /.navbar-collapse -->
