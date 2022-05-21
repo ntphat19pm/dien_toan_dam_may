@@ -33,8 +33,14 @@
                 <form class="d-none d-md-flex ms-4">
                     <input class="form-control border-0" type="search" placeholder="Search">
                 </form>
+                <select name="thelist" class="form-control border-0" onChange="GetMap(this, 'theinput')">
+                  <option>All</option>
+                  <option>Cửa hàng tiện lợi</option>
+                  <option>Siêu thị tiện lợi</option>
+                </select> 
             	<?php include "slider.php"; ?>
 			</nav>
+
             <!-- Navbar End -->
 
             <!-- Recent Sales Start -->
@@ -60,13 +66,14 @@
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
-
+       
 		<?php include "javascript.php"; ?>
 		<script type='text/javascript'
             src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
 	  <script>
-	  function GetMap()
+	  function GetMap(thelist)
 			{
+                var content = "All";
 				var map = new Microsoft.Maps.Map('#map', {
 					credentials: 'Aq57_I2YLhdHHLMVsa7FQzG2_6RrIHr9MopSdBQv0JvLfMidXvEaMmDJY-Uhyini',
 					center: new Microsoft.Maps.Location(10.373529, 105.432962),
@@ -76,21 +83,89 @@
 				db.collection("hotel").get().then((querySnapshot) => {
 				querySnapshot.forEach((doc) => {
 					var marker_icon = '';
-						if(doc.data().Loai == 1)
+						if(content=="Cửa hàng tiện lợi"){
+                            if (doc.data().Loai == 1){
 								marker_icon = '../images/mart.png';
-							else if(doc.data().Loai == 2)
-								marker_icon = '../images/shopping.png';
-							
-						loc = new Microsoft.Maps.Location(doc.data().ToaDo.latitude, doc.data().ToaDo.longitude);
-						pin = new Microsoft.Maps.Pushpin(loc, {
-							title: doc.data().TenDiaDiem,
-							subTitle: doc.data().DiaChi,
-							icon : marker_icon,
+                                loc = new Microsoft.Maps.Location(doc.data().ToaDo.latitude, doc.data().ToaDo.longitude);
+
+                                pin = new Microsoft.Maps.Pushpin(loc, {
+							        title: doc.data().TenDiaDiem,
+							        subTitle: doc.data().DiaChi,
+							        icon : marker_icon,
 	
-						});
-						map.entities.push(pin);
+						        });
+                            }
+                            else 
+                            {
+                               marker_icon = '../images/1.psd';
+                               						loc = new Microsoft.Maps.Location(doc.data().ToaDo.latitude, doc.data().ToaDo.longitude);
+
+                               pin = new Microsoft.Maps.Pushpin(loc, {							
+						         icon : marker_icon,	
+						       });
+                            }
+                            						map.entities.push(pin);
+                        }
+							else if(content=="Siêu thị tiện lợi")
+                            {
+								if (doc.data().Loai == 1)
+                                {
+                                     marker_icon = '../images/1.psd';
+                                     						loc = new Microsoft.Maps.Location(doc.data().ToaDo.latitude, doc.data().ToaDo.longitude);
+
+                                     pin = new Microsoft.Maps.Pushpin(loc, {						
+						                icon : marker_icon,	
+						            });
+                                }
+                                else 
+                                {
+                                    marker_icon = '../images/shopping.png';
+						            loc = new Microsoft.Maps.Location(doc.data().ToaDo.latitude, doc.data().ToaDo.longitude);
+
+                                    pin = new Microsoft.Maps.Pushpin(loc, {
+							            title: doc.data().TenDiaDiem,
+							            subTitle: doc.data().DiaChi,
+							            icon : marker_icon,
+	
+						            });
+                                }
+                                	map.entities.push(pin);
+							}
+                            else if (content=="All"){
+                                  if (doc.data().Loai == 2)
+                                    {
+                                                marker_icon = '../images/shopping.png';
+						                        loc = new Microsoft.Maps.Location(doc.data().ToaDo.latitude, doc.data().ToaDo.longitude);
+                                               pin = new Microsoft.Maps.Pushpin(loc, {
+							                    title: doc.data().TenDiaDiem,
+							                    subTitle: doc.data().DiaChi,
+							                    icon : marker_icon,
+	
+						                    });
+                                    }
+                                    else if (doc.data().Loai == 1){
+                                        marker_icon = '../images/mart.png';
+						                loc = new Microsoft.Maps.Location(doc.data().ToaDo.latitude, doc.data().ToaDo.longitude);
+
+                                        pin = new Microsoft.Maps.Pushpin(loc, {
+							                title: doc.data().TenDiaDiem,
+							                subTitle: doc.data().DiaChi,
+							                icon : marker_icon,
+	
+						                });
+                                        
+
+                                    }
+                                    map.entities.push(pin);
+                            }
+						
+
 					});
 				});
+                  var idx = thelist.selectedIndex;
+
+                  var content = thelist.options[idx].innerHTML;
+
 			}
      
     </script>
