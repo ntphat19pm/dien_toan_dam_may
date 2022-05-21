@@ -1,77 +1,127 @@
 
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+	<?php include "header.php"; ?>
 
-<?php include "header.php"; ?>
-
-<body>
-    <div class="container-xxl position-relative bg-white d-flex p-0">
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-        <!-- Spinner End -->
+    <body data-spy="scroll" data-target=".navbar-collapse">
 
 
-        <!-- Sidebar Start -->
-        <?php include "navbar.php"; ?>
-        <!-- Sidebar End -->
+            <?php include "navbar.php"; ?>
 
+			<section id="home" class="home">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_home">
+                            <div class="col-md-6">
+                                <div class="home_text">
+                                    <h1 class="text-white">Bản đồ khách sạn, nhà nghỉ</h1>
+                                </div>
 
-        <!-- Content Start -->
-        <div class="content">
-            <!-- Navbar Start -->
-			<nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
-                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
-                    <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
-                </a>
-                <a href="#" class="sidebar-toggler flex-shrink-0">
-                    <i class="fa fa-bars"></i>
-                </a>
-                <form class="d-none d-md-flex ms-4">
-                    <input class="form-control border-0" type="search" placeholder="Search">
-                </form>
-                <select name="thelist" class="form-control border-0" onChange="GetMap(this, 'theinput')">
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="phone_one phone_attr1 text-center sm-m-top-30">
+                                    <img src="fun/assets/images/map.png" alt="" width="10000px" />
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div><!--End off row-->
+                </div><!--End off container -->
+            </section> <!--End off Home Sections-->
+
+            <!--screen short section-->
+
+            <section id="screen_area" class="screen_area">
+                <div class="container">
+						<div class="card mt-5 mb-5">
+							<div id="map"></div>
+						</div>
+                </div><!--End off container-->
+            </section><!--End off Screen01 Area Section -->
+             <select name="thelist" class="form-control border-0" onChange="GetMap(this, 'theinput')">
                   <option>All</option>
                   <option>Cửa hàng tiện lợi</option>
                   <option>Siêu thị tiện lợi</option>
                 </select> 
-            	<?php include "slider.php"; ?>
-			</nav>
-
-            <!-- Navbar End -->
-
-            <!-- Recent Sales Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-light text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Bản đồ</h6>
-                    </div>
-                    <div class="table-responsive">
-						<div id="map"></div>
-                    </div>
-                </div>
-            </div>
-            <!-- Recent Sales End -->
-
-            <!-- Footer Start -->
-			<?php include "footer.php"; ?>
-            <!-- Footer End -->
-        </div>
-        <!-- Content End -->
+            <!-- scroll up-->
+            <div class="scrollup">
+                <a href="#"><i class="fa fa-chevron-up"></i></a>
+            </div><!-- End off scroll up -->
+                  
+            <?php include "footer.php"; ?>
 
 
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-    </div>
-       
+        <!-- JS includes -->
+
+        <script src="fun/assets/js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="fun/assets/js/vendor/bootstrap.min.js"></script>
+
+        <script src="fun/assets/js/jquery.magnific-popup.js"></script>
+        <script src="fun/assets/js/jquery.easing.1.3.js"></script>
+        <script src="fun/assets/js/swiper.min.js"></script>
+        <script src="fun/assets/js/jquery.collapse.js"></script>
+        <script src="fun/assets/js/bootsnav.js"></script>
+
+
+
+        <script src="fun/assets/js/plugins.js"></script>
+        <script src="fun/assets/js/main.js"></script>
+
 		<?php include "javascript.php"; ?>
-		<script type='text/javascript'
-            src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
-	  <script>
-	  function GetMap(thelist)
+		<script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AuMwXqmzLyhAzBgfWKlKeURmmmDg3KGquxbk2dIhCBSgRv0JMkTYKALBMdtb32Og' async defer></script>
+        <script>
+            var map, infobox;
+        /*function GetMap()
+                {
+                    var map = new Microsoft.Maps.Map('#map', {
+                        credentials: 'Aq57_I2YLhdHHLMVsa7FQzG2_6RrIHr9MopSdBQv0JvLfMidXvEaMmDJY-Uhyini',
+                        center: new Microsoft.Maps.Location(10.373529, 105.432962),
+                        mapTypeId: Microsoft.Maps.MapTypeId.Road,
+                        zoom: 15
+                    });
+
+                    infobox = new Microsoft.Maps.Infobox(map.getCenter(), {
+                        visible: false
+                    });
+				
+				    infobox.setMap(map);
+                    db.collection("hotel").get().then((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                        var marker_icon = '';
+                            if(doc.data().Loai == 1)
+                                    marker_icon = 'images/mart.png';
+                                else if(doc.data().Loai == 2)
+                                    marker_icon = 'images/shopping.png';
+                                
+                            loc = new Microsoft.Maps.Location(doc.data().ToaDo.latitude, doc.data().ToaDo.longitude);
+                            pin = new Microsoft.Maps.Pushpin(loc, {
+                                title: doc.data().TenDiaDiem,
+                                subTitle: doc.data().DiaChi,
+                                icon : marker_icon,
+        
+                            });
+                            Microsoft.Maps.Events.addHandler(pin, 'click', pushpinClicked);
+                            map.entities.push(pin);
+                        });
+                    });
+                }
+                function pushpinClicked(e) {
+				if (e.target.metadata) {
+					infobox.setOptions({
+						location: e.target.getLocation(),
+						title: e.target.metadata.title,
+						description: e.target.metadata.description,
+						visible: true
+					});
+				}
+			}
+        */
+        	  function GetMap(thelist)
 			{
                 var content = "All";
 				var map = new Microsoft.Maps.Map('#map', {
@@ -167,8 +217,7 @@
                   var content = thelist.options[idx].innerHTML;
 
 			}
-     
-    </script>
-</body>
+        </script>
 
+    </body>
 </html>
