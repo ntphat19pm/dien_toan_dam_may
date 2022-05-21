@@ -36,18 +36,27 @@
 
             <!--screen short section-->
 
-            <section id="screen_area" class="screen_area">
+            <section id="screen_area" class="screen_area mt-5">
                 <div class="container">
-						<div class="card mt-5 mb-5">
-							<div id="map"></div>
-						</div>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <h5>Lọc dữ liệu theo loại địa điểm: </h5> 
+                        </div>
+                        <div class="col-lg-6">
+                            <select name="thelist" class="form-select" onChange="GetMap(this, 'theinput')">
+                            <option>All</option>
+                            <option>Cửa hàng tiện lợi</option>
+                            <option>Siêu thị tiện lợi</option>
+                            </select> 
+                        </div>
+                    </div>
+
+                    <div class="card mt-5 mb-5">
+                        <div id="map"></div>
+                    </div>
                 </div><!--End off container-->
             </section><!--End off Screen01 Area Section -->
-             <select name="thelist" class="form-control border-0" onChange="GetMap(this, 'theinput')">
-                  <option>All</option>
-                  <option>Cửa hàng tiện lợi</option>
-                  <option>Siêu thị tiện lợi</option>
-                </select> 
+            
             <!-- scroll up-->
             <div class="scrollup">
                 <a href="#"><i class="fa fa-chevron-up"></i></a>
@@ -135,7 +144,7 @@
 					var marker_icon = '';
 						if(content=="Cửa hàng tiện lợi"){
                             if (doc.data().Loai == 1){
-								marker_icon = '../images/mart.png';
+								marker_icon = 'images/mart.png';
                                 loc = new Microsoft.Maps.Location(doc.data().ToaDo.latitude, doc.data().ToaDo.longitude);
 
                                 pin = new Microsoft.Maps.Pushpin(loc, {
@@ -147,7 +156,7 @@
                             }
                             else 
                             {
-                               marker_icon = '../images/1.psd';
+                               marker_icon = 'images/1.psd';
                                						loc = new Microsoft.Maps.Location(doc.data().ToaDo.latitude, doc.data().ToaDo.longitude);
 
                                pin = new Microsoft.Maps.Pushpin(loc, {							
@@ -160,7 +169,7 @@
                             {
 								if (doc.data().Loai == 1)
                                 {
-                                     marker_icon = '../images/1.psd';
+                                     marker_icon = 'images/1.psd';
                                      						loc = new Microsoft.Maps.Location(doc.data().ToaDo.latitude, doc.data().ToaDo.longitude);
 
                                      pin = new Microsoft.Maps.Pushpin(loc, {						
@@ -169,7 +178,7 @@
                                 }
                                 else 
                                 {
-                                    marker_icon = '../images/shopping.png';
+                                    marker_icon = 'images/shopping.png';
 						            loc = new Microsoft.Maps.Location(doc.data().ToaDo.latitude, doc.data().ToaDo.longitude);
 
                                     pin = new Microsoft.Maps.Pushpin(loc, {
@@ -184,7 +193,7 @@
                             else if (content=="All"){
                                   if (doc.data().Loai == 2)
                                     {
-                                                marker_icon = '../images/shopping.png';
+                                                marker_icon = 'images/shopping.png';
 						                        loc = new Microsoft.Maps.Location(doc.data().ToaDo.latitude, doc.data().ToaDo.longitude);
                                                pin = new Microsoft.Maps.Pushpin(loc, {
 							                    title: doc.data().TenDiaDiem,
@@ -194,7 +203,7 @@
 						                    });
                                     }
                                     else if (doc.data().Loai == 1){
-                                        marker_icon = '../images/mart.png';
+                                        marker_icon = 'images/mart.png';
 						                loc = new Microsoft.Maps.Location(doc.data().ToaDo.latitude, doc.data().ToaDo.longitude);
 
                                         pin = new Microsoft.Maps.Pushpin(loc, {
