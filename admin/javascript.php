@@ -17,8 +17,6 @@
 <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
 
 <!-- JavaScript Libraries -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="dashmin/lib/chart/chart.min.js"></script>
     <script src="dashmin/lib/easing/easing.min.js"></script>
     <script src="dashmin/lib/waypoints/waypoints.min.js"></script>
@@ -29,6 +27,37 @@
 
     <!-- Template Javascript -->
     <script src="dashmin/js/main.js"></script>
+
+    <!-- <script src="adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="adminlte/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="adminlte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="adminlte/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="adminlte/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="adminlte/plugins/jszip/jszip.min.js"></script>
+    <script src="adminlte/plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="adminlte/plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="adminlte/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="adminlte/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="adminlte/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+
+    <script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#HienThi').DataTable({
+      "paging": true,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script> -->
 
 <script>
 	// Your web app's Firebase configuration

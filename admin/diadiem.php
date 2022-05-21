@@ -43,6 +43,15 @@
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <h6 class="mb-0">Danh sách địa điểm</h6>
                         
+                        <form action="" class="form-inline mb-3">
+                        <div class="form-group ">
+                        <input class="form-control" name="tukhoa" placeholder="Nhập tên danh mục">
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                        <i class ="fas fa-search"></i>
+                        </button>
+                        </form>
+
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-3">
                             <a href="diadiem_them.php" class="btn btn-outline-secondary mt-2"><i class="fas fa-plus-circle"></i> Thêm địa điểm</a> 
                             <!-- <a href="diadiem_nhap.php" class="btn btn-outline-success ml-3 mt-2"><i class="fas fa-file-upload"></i> Nhập Excel</a> -->
@@ -86,7 +95,7 @@
 		<?php include "javascript.php"; ?>
 
 		<script>
-			db.collection('hotel').get().then((querySnapshot) => {
+			db.collection('hotel').orderBy("TenDiaDiem", "asc").get().then((querySnapshot) => {
 				var stt = 1;
 				var output = '';
 				querySnapshot.forEach((doc) => {
