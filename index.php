@@ -70,8 +70,8 @@
                         <div class="main_features p-top-100">
                             <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
                                 <div class="head_title text-center">
-                                    <h2>Perfect Features</h2>
-                                    <h5>Only necessary</h5>
+                                    <h2>Tính năng</h2>
+                                    <h5>Những tính năng mà bản đồ đem lại</h5>
                                 </div>
                             </div>
 

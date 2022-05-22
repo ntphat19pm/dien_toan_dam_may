@@ -41,21 +41,10 @@
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-light text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Danh sách địa điểm</h6>
-                        
-                        <form action="timkiem.php" class="form-inline mb-3" method="GET">
-                            <div class="form-group ">
-                                <input class="form-control" name="tukhoa" placeholder="Nhập tên danh mục">
-                            </div>
-                            <button type="submit" class="btn btn-primary">
-                                <i class ="fas fa-search"></i>
-                            </button>
-                        </form>
+                        <h6 class="mb-0">Kết quả tìm kiếm: <?php echo $_GET['tukhoa'];?></h6>
 
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-3">
-                            <a href="diadiem_them.php" class="btn btn-outline-secondary mt-2"><i class="fas fa-plus-circle"></i> Thêm địa điểm</a> 
-                            <!-- <a href="diadiem_nhap.php" class="btn btn-outline-success ml-3 mt-2"><i class="fas fa-file-upload"></i> Nhập Excel</a> -->
-                        </div>
+                        <input type="text" value="<?php echo $_GET['tukhoa'];?>" class="form-control" id="tukhoa" name="tukhoa" hidden />
+                    
 						<!-- <a href="" type="button" class="btn btn-square btn-outline-primary m-2"><i class="fa fa-plus"></i> Thêm địa điểm</a>
 						<a href="diadiem_them.php" type="button" class="btn btn-square btn-outline-primary m-2"><i class="fa fa-file"></i></a> -->
                     </div>
@@ -95,7 +84,7 @@
 		<?php include "javascript.php"; ?>
 
 		<script>
-			db.collection('hotel').orderBy("TenDiaDiem", "asc").get().then((querySnapshot) => {
+            db.collection('hotel').orderBy("TenDiaDiem", "asc").get().then((querySnapshot) => {
 				var stt = 1;
 				var output = '';
 				querySnapshot.forEach((doc) => {

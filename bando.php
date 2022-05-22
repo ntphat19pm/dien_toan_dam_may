@@ -17,7 +17,7 @@
                         <div class="main_home">
                             <div class="col-md-6">
                                 <div class="home_text">
-                                    <h1 class="text-white">Bản đồ khách sạn, nhà nghỉ</h1>
+                                    <h1 class="text-white">Bản đồ siêu thị tiện lợi, cửa hàng tiện lợi</h1>
                                 </div>
 
                             </div>

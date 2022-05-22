@@ -33,11 +33,7 @@
                 <form class="d-none d-md-flex ms-4">
                     <input class="form-control border-0" type="search" placeholder="Search">
                 </form>
-                <select name="thelist" class="form-control border-0" onChange="GetMap(this, 'theinput')">
-                  <option>All</option>
-                  <option>Cửa hàng tiện lợi</option>
-                  <option>Siêu thị tiện lợi</option>
-                </select> 
+                
             	<?php include "slider.php"; ?>
 			</nav>
 
@@ -48,6 +44,13 @@
                 <div class="bg-light text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <h6 class="mb-0">Bản đồ</h6>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+                            <select name="thelist" class="form-select" onChange="GetMap(this, 'theinput')">
+                                <option>All</option>
+                                <option>Cửa hàng tiện lợi</option>
+                                <option>Siêu thị tiện lợi</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="table-responsive">
 						<div id="map"></div>
